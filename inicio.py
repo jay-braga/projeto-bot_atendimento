@@ -1,3 +1,4 @@
+912345679
 # NexoGest - bot de atendimento
 # vê pelo número se quem escreve é admin ou cliente e mostra o menu certo
 

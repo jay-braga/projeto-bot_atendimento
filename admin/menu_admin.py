@@ -29,7 +29,10 @@ def menu_admin(conexao, cursor):
 
             # o admin escolhe a marcação pelo id e confirma ou cancela
             def status():
-                id_marc = int(input("Insira um id que pretanda alterar:"))
+                escolha = input("Insira um id que pretanda alterar (Enter para voltar):")
+                if escolha == "":
+                    return   # volta ao menu
+                id_marc = int(escolha)
                 cursor.execute("SELECT * FROM Marcacoes Where id_marcacao = ? ", (id_marc,))
                 ver = cursor.fetchone()
 
@@ -65,7 +68,7 @@ def menu_admin(conexao, cursor):
                         print(f"Mensagem para {dados1[1]}: {texto1}")
 
                     cancelar()
-            print(status())
+            status()
 
         elif select == 2:
             # ainda por fazer
